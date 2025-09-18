@@ -1,0 +1,89 @@
+
+    :root{
+      --bg:hwb(217 6% 86%);
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#7c3aed; /* purple accent */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max-width:1000px;
+      --gap:18px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: dark;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#071027 120%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;align-items:start;justify-content:center;padding:36px 16px;
+    }
+
+    .sheet{
+      width:100%;max-width:var(--max-width);
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:20px; padding:28px; box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      backdrop-filter: blur(6px);
+    }
+
+    header{
+      display:flex;gap:18px;align-items:center;justify-content:space-between;margin-bottom:18px;
+    }
+
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{
+      width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:white;box-shadow:0 6px 20px rgba(124,58,237,0.18)
+    }
+
+    h1{margin:0;font-size:22px}
+    p.lead{margin:4px 0 0;color:var(--muted);font-size:14px}
+
+    nav{display:flex;gap:10px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--muted);text-decoration:none;font-size:14px}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#06b6d4);color:white;border:0}
+
+    main{display:grid;grid-template-columns:360px 1fr;gap:24px;margin-top:10px}
+
+    /* left column */
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow: inset 0 1px 0 rgba(255,255,255,0.02)}
+    .avatar{width:110px;height:110px;border-radius:16px;background:linear-gradient(180deg,#111827,#0b1220);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:32px;color:var(--muted);margin-bottom:12px}
+
+    .section-title{font-weight:600;margin-bottom:8px}
+    ul.skill-list{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:var(--glass);padding:8px 10px;border-radius:999px;font-size:13px;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+
+    .contact-list{list-style:none;padding:0;margin:8px 0 0;color:var(--muted);font-size:14px}
+    .contact-list li{margin-bottom:8px}
+
+    /* right column */
+    .hero{display:flex;align-items:flex-start;gap:18px}
+    .hero h2{margin:0;font-size:20px}
+    .hero p{margin:6px 0 0;color:var(--muted)}
+
+    .experience{margin-top:16px}
+    .job{padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02);margin-bottom:12px}
+    .job .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
+
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+    .project{padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.02)}
+
+    footer{margin-top:18px;padding-top:14px;border-top:1px dashed rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}
+
+    /* contact form */
+    form.contact-form{display:grid;gap:10px}
+    input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    textarea{min-height:120px;resize:vertical}
+    .inline{display:flex;gap:10px}
+
+    /* responsive */
+    @media (max-width:880px){
+      main{grid-template-columns:1fr}
+      .avatar{margin:0 auto}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+      nav{order:2}
+    }
+  

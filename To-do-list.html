@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List (JS Only)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="Style2.css">
+</head>
+<!-- Add this inside your <head> tag -->
+<body>
+    <div class="container">
+        <h2>Todo List</h2>
+        <a href="login.html?" style="text-decoration: none; color: #ff7e5f; font-size: 14px; display: block; text-align: center; margin-bottom: 20px;">Login</a>
+        <a href="Signup.html" style="text-decoration: none; color: #ff7e5f; font-size: 14px; display: block; text-align: center; margin-bottom: 20px;">Sign Up</a>
+        <a href="Dash.html" style="text-decoration: none; color: #ff7e5f; font-size: 14px; display: block; text-align: center; margin-bottom: 20px;">Dashboard</a>
+<div class="tabs">
+    <button id="tab-tasks" class="tab-btn active">View Tasks</button>
+    <button id="tab-schedule" class="tab-btn">My Schedule</button>
+</div>
+        <div class="filter-bar">
+            <select id="filterCategory">
+                <option value="">All Categories</option>
+            </select>
+            <select id="filterStatus">
+                <option value="">All Status</option>
+                <option value="active">Active</option>
+                <option value="completed">Completed</option>
+            </select>
+            <input type="text" id="searchTask" placeholder="Search...">
+        </div>
+        <form id="addForm">
+            <input type="text" id="title" placeholder="Task title" required>
+            <input type="text" id="category" placeholder="Category">
+            <input type="date" id="deadline" placeholder="Deadline">
+            <button type="submit">Add Task</button>
+        </form>
+        <ul id="tasks"></ul>
+        <ul id="schedule" style="display:none;"></ul>
+    </div>
+
+<script src="Java.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+
+        let allTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+
+        function saveTasks() {
+            localStorage.setItem('tasks', JSON.stringify(allTasks));
+        }
+
+        function renderCategoryFilter(tasks) {
+            const categories = [...new Set(tasks.map(t => t.category).filter(Boolean))];
+            const filterCategory = document.getElementById('filterCategory');
+            filterCategory.innerHTML = `<option value="">All Categories</option>` +
+                categories.map(cat => `<option value="${cat}">${cat}</option>`).join('');
+        }
+
+        function renderTasks() {
+            const ul = document.getElementById('tasks');
+            const filterCategory = document.getElementById('filterCategory').value;
+            const filterStatus = document.getElementById('filterStatus').value;
+            const search = document.getElementById('searchTask').value.toLowerCase();
+
+            let tasks = allTasks.filter(task => {
+                let match = true;
+                if (filterCategory && task.category !== filterCategory) match = false;
+                if (filterStatus === 'active' && task.completed) match = false;
+                if (filterStatus === 'completed' && !task.completed) match = false;
+                if (search && !task.title.toLowerCase().includes(search) && !(task.category && task.category.toLowerCase().includes(search))) match = false;
+                return match;
+            });
+
+            ul.innerHTML = '';
+            if (tasks.length === 0) {
+                ul.innerHTML = `<li style="text-align:center;color:#aaa;">No tasks found.</li>`;
+                return;
+            }
+            tasks.forEach((task, i) => {
+                const li = document.createElement('li');
+                li.className = 'task-item' + (task.completed ? ' completed' : '');
+                li.innerHTML = `
+                    <div class="task-info">
+                        <span class="task-title">${task.title}</span>
+                        <span class="task-meta">
+                            ${task.category ? `<span>📁 ${task.category}</span>` : ''}
+                            ${task.deadline ? `<span>⏰ ${task.deadline}</span>` : ''}
+                        </span>
+                    </div>
+                    <div class="task-actions">
+                        ${!task.completed ? `<button class="complete-btn" data-action="complete" data-index="${i}">Complete</button>` : ''}
+                        <button class="edit-btn" data-action="edit" data-index="${i}">Edit</button>
+                        <button class="delete-btn" data-action="delete" data-index="${i}">Delete</button>
+                    </div>
+                `;
+                ul.appendChild(li);
+            });
+        }
+
+        function renderSchedule() {
+    const ul = document.getElementById('schedule');
+    // Sort tasks by deadline (ascending), only those with a deadline
+    let tasks = allTasks
+        .filter(task => task.deadline)
+        .sort((a, b) => a.deadline.localeCompare(b.deadline));
+    ul.innerHTML = '';
+    if (tasks.length === 0) {
+        ul.innerHTML = `<li style="text-align:center;color:#aaa;">No scheduled tasks.</li>`;
+        return;
+    }
+    tasks.forEach((task, i) => {
+        const li = document.createElement('li');
+        li.className = 'task-item' + (task.completed ? ' completed' : '');
+        li.innerHTML = `
+            <div class="task-info">
+                <span class="task-title">${task.title}</span>
+                <span class="task-meta">
+                    ${task.category ? `<span>📁 ${task.category}</span>` : ''}
+                    <span>⏰ ${task.deadline}</span>
+                </span>
+            </div>
+        `;
+        ul.appendChild(li);
+    });
+}
+
+// Tab switching logic
+document.getElementById('tab-tasks').onclick = function() {
+    this.classList.add('active');
+    document.getElementById('tab-schedule').classList.remove('active');
+    document.getElementById('tasks').style.display = '';
+    document.getElementById('schedule').style.display = 'none';
+    document.querySelector('.filter-bar').style.display = '';
+    renderTasks();
+};
+document.getElementById('tab-schedule').onclick = function() {
+    this.classList.add('active');
+    document.getElementById('tab-tasks').classList.remove('active');
+    document.getElementById('tasks').style.display = 'none';
+    document.getElementById('schedule').style.display = '';
+    document.querySelector('.filter-bar').style.display = 'none';
+    renderSchedule();
+};
+
+        function updateAndRender() {
+            saveTasks();
+            renderCategoryFilter(allTasks);
+            renderTasks();
+            renderSchedule();
+        }
+
+        document.getElementById('addForm').onsubmit = function(e) {
+            e.preventDefault();
+            allTasks.push({
+                title: document.getElementById('title').value,
+                category: document.getElementById('category').value,
+                deadline: document.getElementById('deadline').value,
+                completed: false
+            });
+            this.reset();
+            updateAndRender();
+        };
+
+        document.getElementById('tasks').onclick = function(e) {
+            if (e.target.tagName !== 'BUTTON') return;
+            const i = Number(e.target.getAttribute('data-index'));
+            const action = e.target.getAttribute('data-action');
+            if (action === 'complete') {
+                allTasks[i].completed = true;
+            } else if (action === 'delete') {
+                if (confirm('Delete this task?')) allTasks.splice(i, 1);
+            } else if (action === 'edit') {
+                const task = allTasks[i];
+                const newTitle = prompt('Edit title:', task.title);
+                if (newTitle === null) return;
+                const newCategory = prompt('Edit category:', task.category || '');
+                if (newCategory === null) return;
+                const newDeadline = prompt('Edit deadline (YYYY-MM-DD):', task.deadline || '');
+                if (newDeadline === null) return;
+                task.title = newTitle;
+                task.category = newCategory;
+                task.deadline = newDeadline;
+            }
+            updateAndRender();
+        };
+
+        document.getElementById('filterCategory').onchange =
+        document.getElementById('filterStatus').onchange =
+        document.getElementById('searchTask').oninput = renderTasks;
+
+        updateAndRender();
+      
+        
+        // ...existing code...
+// User session check and per-user tasks
+const currentUser = localStorage.getItem('currentUser');
+if (!currentUser) {
+    window.location.href = "login.html";
+}
+function saveTasks() {
+    localStorage.setItem('tasks', JSON.stringify(allTasks));
+    // Save to user profile
+    let users = JSON.parse(localStorage.getItem('users') || '{}');
+    if (users[currentUser]) {
+        users[currentUser].tasks = allTasks;
+        localStorage.setItem('users', JSON.stringify(users));
+    }
+}
+// ...existing code...

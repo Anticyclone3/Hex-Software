@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #333;
+    }
+    header {
+      background: #4f46e5;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 28px;
+    }
+    header p {
+      margin: 0;
+      font-size: 16px;
+    }
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+    section {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    section h2 {
+      margin-top: 0;
+      color: #4f46e5;
+    }
+    #skills ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      list-style: none;
+    }
+    #skills li {
+      background: #f0f2ff;
+      color: #4f46e5;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-size: 14px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    form button {
+      margin-top: 12px;
+      background: #4f46e5;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #372fba;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #f0f2ff;
+      color: #555;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="git.png" alt="Your Headshot">
+    <h1>Arya Marale</h1>
+    <p>Aspiring Software Developer | BCA Graduate</p>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am a motivated BCA Graduate student with strong skills in web development and software solutions. I have hands-on experience in building responsive websites and full-stack projects using HTML, CSS, JavaScript, Power Bi, and MySQL. I am eager to apply my problem-solving and teamwork abilities in an internship role to contribute and grow further.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Power Bi</li>
+        <li>MySQL</li>
+        <li>Python</li>
+        <li>Teamwork</li>
+        <li>Problem Solving</li>
+        <li>Communication</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>BookHub (Online Bookstore):</strong> A full-stack website where users can buy/sell books, manage carts, and pay via Google Pay. Built with Node.js, MySQL, and HTML/CSS/JS.</li>
+        <li><strong>Netflix Game:</strong> Interactive movie-based website where users play as characters from films, completing missions. Built with HTML, CSS, and JavaScript.</li>
+        <li><strong>Rock-Paper-Scissors Game:</strong> Mini-project using JavaScript and DOM manipulation for user interaction.</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <p><strong>Web Development Intern (College Project Experience)</strong><br>
+         Built and deployed multiple academic projects demonstrating practical use of front-end and back-end technologies. Collaborated in a team environment and followed project timelines.<br>
+         During my academics I build a site where all types of Service providers & Coachs u can find & it will be helpful all over Globe. Cuz we are providing Health, fitness, Music Coaches as per user requirements.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form action="mailto:you@example.com" method="post" enctype="text/plain">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="Name" placeholder="Your Name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" placeholder="you@example.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="Message" placeholder="Your message here..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    © Arya Marale — Resume Website for Internship
+  </footer>
+</body>
+</html>
+
