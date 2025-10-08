@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Simple Web Music Player</title>
+<link rel="stylesheet" href="Style4.css" />
+</head>
+<body>
+  <div class="player" role="application">
+    <header>
+      <div class="logo">MP</div>
+      <div>
+        <h1>My Music Player</h1>
+        <p class="lead">Playlists • Play / Pause • Next • Previous • Volume</p>
+      </div>
+    </header>
+
+    <div class="layout">
+      <!-- Playlist column -->
+      <div class="playlist" id="playlist" aria-label="Playlist">
+        <!-- Track items injected by JS -->
+      </div>
+
+      <!-- Now playing & controls -->
+      <div>
+        <div class="now" id="nowPlaying">
+          <div class="info">
+            <div class="cover" id="cover">🎧</div>
+            <div style="flex:1">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                  <div id="trackTitle" style="font-weight:700">Select a song</div>
+                  <div id="trackArtist" style="font-size:13px;color:var(--muted)">Artist</div>
+                </div>
+                <div class="volume" style="margin-left:12px">
+                  <button id="muteBtn" class="btn" title="Mute/Unmute">🔊</button>
+                  <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume control">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="controls" role="toolbar" aria-label="Playback controls">
+            <button id="prev" class="btn" title="Previous">⏮️</button>
+            <button id="playPause" class="btn primary" title="Play / Pause">▶️</button>
+            <button id="next" class="btn" title="Next">⏭️</button>
+            <div style="flex:1"></div>
+            <div style="font-size:13px;color:var(--muted)">Playlist</div>
+          </div>
+
+          <div class="progress-area">
+            <div class="progress" id="progress" title="Click to seek">
+              <div class="bar" id="progressBar"></div>
+            </div>
+            <div class="time"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+          </div>
+        </div>
+
+
+        <div class="Music">Song</div>
+    <div>
+        <h1>Listen to latest Song of Cyclone</h1>
+        <marquee><img src="Save.jpeg" height="28%" width="30%" alt="1"></marquee>
+        <br>
+        <h1 style="color: rgb(110, 17, 90);">Taste the wine of Romance</h1>
+        <br>
+        <a href="https://soundcloud.com/anticyclone-327170781/taste-the-wine-of-romance?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" style="color: blueviolet;">Get into the Vibes</a>
+        <h1 style="font-family: Arial, Helvetica, sans-serif;color: rgb(214, 96, 214);font-size: medium;">Check out his spotify</h1>
+        <a href="https://open.spotify.com/track/2zQawNt1deZ92QmIeJ86tW?si=09f74adef4324b29">Listen Now</a>
+        <br>
+    </div>
+
+        <div class="footer">Tip: Click a track to play. Drag the progress bar to seek.</div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+  <script src="Script.js"></script>
+
+</body>
+</html>
