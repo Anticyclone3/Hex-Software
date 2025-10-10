@@ -1,10 +1,9 @@
-/* Google Fonts for a modern look */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 :root {
   --primary: #6c63ff;
   --primary-dark: #4b47b6;
-  --bg: #f5f7fa;
+  --background: url('Star.png') no-repeat center center/cover;
   --surface: #fff;
   --muted: #888;
   --accent: #ffb86c;
@@ -16,9 +15,11 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #e0e7ff 0%, #f5f7fa 100%);
   font-family: 'Montserrat', Arial, sans-serif;
   color: #222;
+   /* Clubbing background GIF */
+  background: url('Star.png') no-repeat center center/cover;
+  background-attachment: fixed;
 }
 
 .player {
@@ -256,4 +257,5 @@ padding-bottom: 12px;
   .now {
     min-width: unset;
   }
+
 }
