@@ -10,8 +10,14 @@ No.	Project Name	Description	Tech Stack
 3	Online Bookstore Website	A dynamic web app where users can buy, sell, and manage books with login/signup, cart, and payment integration.	HTML, CSS, JavaScript, Node.js, MySQL
 🖥️ 1 & 2. Resume Portfolio + Music Player
 💡 Features
+4. Also made Animating websites using HTML, CSS, and JS!
+Create a website header section with animation. On this website
+design we will animate some elements with CSS animations and
+there will be some time delay in animation for all the website
+elements.
 
-![My world](https://github.com/user-attachments/assets/d2c0625a-6205-488d-97bc-36b6b9213ae8)
+<img width="1874" height="874" alt="image" src="https://github.com/user-attachments/assets/6b8384cd-f5a1-44b3-aa3b-8e7ca62ce670" />
+
 
 
 Interactive animated portfolio header section
