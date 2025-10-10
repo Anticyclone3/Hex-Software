@@ -42,6 +42,9 @@ Playlist display with song titles and artists
 | [Music Player Controls + Playlist]|
 -------------------------------------
 
+<img width="1881" height="897" alt="image" src="https://github.com/user-attachments/assets/79a8801b-6ff4-4355-87b9-0d774033098a" />
+
+
 🧩 Technologies Used
 
 HTML5 for structure
