@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEX Music Studio - Learn & Record</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header" id="home">
+        <nav class="nav">
+            <div class="logo">HEX<span>Music</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#booking">Booking</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1 class="header-title">Learn & Record <span>Music</span> Like Never Before</h1>
+            <p class="header-subtitle">Professional music learning and recording studio services to help you achieve your musical dreams</p>
+            <a href="#booking" class="header-btn">Book a Session</a>
+        </div>
+        <div class="floating-notes">
+            <div class="note note1">♪</div>
+            <div class="note note2">♫</div>
+            <div class="note note3">♩</div>
+            <div class="note note4">♬</div>
+            <div class="note note5">♪</div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-icon">🎸</div>
+                    <h3 class="service-title">Music Lessons</h3>
+                    <p class="service-desc">Learn from professional musicians with years of experience. We offer lessons for all skill levels and various instruments.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎙️</div>
+                    <h3 class="service-title">Recording Sessions</h3>
+                    <p class="service-desc">State-of-the-art recording studio with professional equipment to capture your music with crystal clear quality.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎚️</div>
+                    <h3 class="service-title">Mixing & Mastering</h3>
+                    <p class="service-desc">Professional audio engineers to mix and master your tracks to industry standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking">
+        <div class="container">
+            <h2 class="section-title">Book a Session</h2>
+            <div class="booking-container">
+                <div class="booking-info">
+                    <h3>Ready to Start Your Musical Journey?</h3>
+                    <p>Book a session with us today and take the first step towards achieving your musical goals. Whether you're looking for lessons, recording time, or production services, we've got you covered.</p>
+                    <div class="booking-features">
+                        <div class="feature">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">Flexible scheduling options</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">Professional equipment and facilities</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">Experienced instructors and engineers</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking-form">
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Type</label>
+                            <select id="service" class="form-control" required>
+                                <option value="">Select a service</option>
+                                <option value="lessons">Music Lessons</option>
+                                <option value="recording">Recording Session</option>
+                                <option value="mixing">Mixing & Mastering</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Information</label>
+                            <textarea id="message" class="form-control" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="form-btn">Book Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>HEX Music Studio</h4>
+                    <p>Professional music learning and recording studio services to help you achieve your musical dreams.</p>
+                    <div class="footer-social">
+                        <a href="#">f</a>
+                        <a href="#">in</a>
+                        <a href="#">ig</a>
+                        <a href="#">yt</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#booking">Booking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p>123 Music Street, Melody City</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@hexmusic.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 HEX Music Studio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Database Connection Placeholder (for future MySQL integration) -->
+    <div class="db-connection" id="dbConnection">
+        <!-- This section will be used for MySQL database connection -->
+    </div>
+
+    <script src="script.js"></script>
+    <script src="database.js"></script>
+</body>
+</html>
